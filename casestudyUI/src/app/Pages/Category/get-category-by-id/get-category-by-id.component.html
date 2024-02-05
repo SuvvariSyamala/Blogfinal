@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <table class="table" *ngIf="isCategoryExist">
+        <tr>
+            <td>CategoryId</td>
+            <td>
+                <input type="number" [(ngModel)]="category.categoryId" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>CategoryName</td>
+            <td>
+                <input type="text" [(ngModel)]="category.categoryName"  class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <input type="text" [(ngModel)]="category.description" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Save</button> &nbsp;
+                
+            </td>
+        </tr>
+    </table>
+</div>

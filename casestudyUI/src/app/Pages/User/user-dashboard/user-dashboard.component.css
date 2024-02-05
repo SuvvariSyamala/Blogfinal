@@ -1,0 +1,42 @@
+/* Add your existing styles */
+ 
+/* Button Styles */
+.primary-button,
+.nav-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    background-color: rgb(189, 134, 134); /* Shared button background color */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+ 
+.primary-button:hover,
+.nav-button:hover {
+    background-color:  rgb(246, 239, 240); /* Darker color on hover */
+}
+ 
+/* Adjust button sizes */
+.primary-button {
+    font-size: 18px;
+}
+ 
+.nav-button {
+    font-size: 16px;
+}
+ 
+/* Zigzag Layout */
+.nav-item:nth-child(even) .primary-button,
+.nav-item:nth-child(odd) .nav-button {
+    background-color: rgb(189, 134, 134); /* Different color for alternating buttons */
+}
+ 
+.nav-item:nth-child(even) .primary-button:hover,
+.nav-item:nth-child(odd) .nav-button:hover {
+    background-color: rgb(246, 239, 240); /* Darker color on hover for alternating buttons */
+}

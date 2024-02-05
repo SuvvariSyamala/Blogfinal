@@ -1,0 +1,30 @@
+/* Styles for the toggle switch */
+.toggle-container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .toggle-circle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-active .toggle-circle {
+    transform: translate(100%, -50%);
+  }
+  

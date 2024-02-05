@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table" *ngIf="iscommentExist">
+        <tr>
+            <td>Comment-ID</td>
+            <td>
+                <input type="number" [(ngModel)]="comment.id" readonly class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Text</td>
+            <td>
+                <input type="text" [(ngModel)]="comment.text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>PostId</td>
+            <td>
+                <input type="number" [(ngModel)]="comment.postId" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Edit</button> &nbsp;
+            </td>
+        </tr>
+    </table>
+</div>

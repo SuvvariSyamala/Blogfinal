@@ -1,0 +1,17 @@
+body 
+{
+  /* Set the background image and properties */
+background-color:rgb(246, 239, 240) ;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #333;
+  text-align: center; /* Center the text if needed */
+  margin-top: auto; /* Push the heading to the bottom of the container */
+}

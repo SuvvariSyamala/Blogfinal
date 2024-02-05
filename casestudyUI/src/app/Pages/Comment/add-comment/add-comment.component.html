@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table" >
+        <tr>
+            <td>CommentText</td>
+            <td>
+                <input type="text" [(ngModel)]="comment.text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>PostId</td>
+            <select [(ngModel)]="comment.postId" (change)="getAllPost($event)">
+                <option *ngFor="let post of posts" [value]="post.postId">{{ post.postId }}</option>
+              </select>
+        </tr>
+        <tr>
+            <!-- <td>UserId</td>
+            <td>
+                <input type="number" [(ngModel)]="comment.userId" class="form-control">
+            </td>
+        </tr>
+        <tr> -->
+            <td colspan="2">
+                <button (click)="AddComment()">Add</button>
+            </td>
+        </tr>
+    
+    </table>
+    </div>

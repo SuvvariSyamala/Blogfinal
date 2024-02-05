@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>All Categories</h3>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <!-- <th>Category-ID</th> -->
+                <th>Category-name</th>
+                <th>CategoryDescription</th>
+                <th colspan="2" *ngIf="userRole=='Admin'" >Action</th>
+            </tr>
+       </thead>
+<tbody>
+    <tr *ngFor="let item of categories">
+       <!-- // <td>{{item.categoryId}}</td> -->
+        <td>{{item.categoryName}}</td>
+        <td>{{item.description}}</td>
+        
+        <td colspan="2" *ngIf="userRole=='Admin'">
+            <button class="btn btn-primary" (click)="delete(item.categoryId)">Delete</button>&nbsp;
+            <button class="btn btn-primary" (click)="edit(item.categoryId)">Edit</button>
+        </td>
+    </tr>
+</tbody>
+    </table>
+</div>

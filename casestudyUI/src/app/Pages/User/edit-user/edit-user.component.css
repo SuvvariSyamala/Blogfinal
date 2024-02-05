@@ -1,0 +1,33 @@
+.password-input-container {
+    position: relative;
+}
+
+.form-control {
+    padding: right 10px; /* Space for the eye icon */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px; /* Adjust the right position as needed */
+    top: 30%;
+    transform: translateY(100%);
+    background:rgb(0, 0, 0);
+    border: black;
+    cursor: pointer;
+    color: rgb(189, 134, 134);
+    size: 10px;
+    
+}
+
+
+button {
+    
+    right: 0; /* Adjust the right position as needed */
+    top: 0; /* Adjust the top position as needed */
+    margin: 10px; /* Add margin for spacing */
+    background:rgb(189, 134, 134);
+    border: none;
+    cursor: pointer;
+    color:black; /* Change the color as needed */
+    font-size: 1.2rem; /* Change the font size as needed */
+}

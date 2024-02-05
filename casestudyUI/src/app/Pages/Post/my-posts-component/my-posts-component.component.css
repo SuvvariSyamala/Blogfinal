@@ -1,0 +1,113 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    width: 100%;
+    background-color: rgb(189, 134, 134);
+    padding: 10px;
+}
+
+.form-group label {
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    overflow: auto;
+}
+
+.post-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(189, 134, 134);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    padding: 16px;
+    background-color: rgb(189, 134, 134);
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-header h3 {
+    margin: 0;
+}
+
+.post-content {
+    padding: 16px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.post-footer {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    background-color: rgb(226, 166, 166);
+    color: #fff;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: rgb(189, 134, 134);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background-color: rgb(189, 134, 134);
+    color: #fff;
+}
+
+.post-meta {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(241, 240, 240);
+    color: #120202;
+}
+
+.post-meta span {
+    margin-right: 10px;
+}
+
+.post-meta .btn {
+    cursor: pointer;
+    background-color: rgb(189, 134, 134);
+    color: #190202;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+}
+
+.post-meta .btn:hover {
+    background-color: rgb(22, 1, 1);
+    color: #fff;
+}

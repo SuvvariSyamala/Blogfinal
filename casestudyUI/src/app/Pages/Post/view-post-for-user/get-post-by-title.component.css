@@ -1,0 +1,54 @@
+/* Component CSS */
+
+.container {
+    font-family: 'YourSelectedFont', sans-serif;
+  }
+  
+  .posts-container {
+    background-color: #f37676; 
+    padding: 20px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+  }
+  
+  h2 {
+    color: #191a19; 
+  }
+  
+  .content-box {
+    margin-top: 5px; 
+    padding: 5px;
+  }
+  
+  .details {
+    margin-top: 10px; 
+  }
+  
+  .details div {
+    margin-bottom: 8px;
+  }
+  
+  .comment-box {
+    margin-top: 20px;
+    background: #e2bfbf; 
+  }
+  
+  .comment-box h3 {
+    color: #a5dcb1;
+    background: #e2bfbf; 
+  }
+  
+  .comment-box p {
+    margin: 8px 0;
+    background: #e2bfbf; 
+  }
+  
+  .btn {
+    margin-right: 8px; 
+  }
+  
+  .comment-box hr {
+    margin: 20px 0; 
+    background: #e2bfbf;
+  }
+  

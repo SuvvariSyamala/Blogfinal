@@ -1,0 +1,49 @@
+<div class="container">
+  <h3>All Blogs</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="search-bar">
+          <input id="postTitle" [(ngModel)]="postTitle" placeholder="Search Blogs" />
+          <button (click)="searchPostByTitle()">Search</button>
+        </div>
+        <label for="selectCategory">Select Category:</label>
+
+        <select [(ngModel)]="categoryId" (change)="getPostByCategoryId()" class="form-control">
+         
+          <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+        </select>
+      
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Add content for the second container here if needed -->
+    </div>
+  </div> <br>
+
+  <div class="row custom-scroll-area">
+    <div *ngFor="let item of posts" class="col-md-6 mb-3">
+      <div class="post-card">
+        <div class="post-header">
+          <h3>{{ item.postTitle }}</h3>
+          <span class="post-date">{{ item.publishedDate | date:'dd:MM:yyyy' }}</span>
+        </div>
+        <div class="post-content">
+          <img src="http://localhost:5293/Resources/Images/{{item.image}}" alt="" width="300" height="100">
+          <p>{{ item.content }}</p>
+          
+          
+        
+          <p class="text-bold url-handle"><span>URL:</span> <a href="{{ item.urlHandle }}" target="_blank">{{ item.urlHandle }}</a></p>
+        </div>
+        <div class="post-meta">
+          <span>Author: {{ item.authorName }}</span>
+          <span>Category: {{ item.categoryName }}</span>
+          
+          <button class="btn btn-primary" (click)="view(item.postId)">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

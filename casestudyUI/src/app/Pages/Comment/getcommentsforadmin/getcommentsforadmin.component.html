@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="form-group">
+      <label for="selectPost">Select Post:</label>
+      <select [(ngModel)]="postId" (change)="getCommentsByPostId()">
+        <option *ngFor="let post of posts" [value]="post.postId">{{ post.postId }}</option>
+      </select>
+       <!-- <button class="btn btn-primary" (click)="getPostByCategoryId()">Filter posts</button> -->
+    </div>
+  
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>comment ID</th>
+          <th>Comment-text</th>
+          <th>CommentStatus</th>
+          <th>UserName</th>
+          <th>CategoryName</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of comments">
+          <td>{{item.id}}</td>
+          <td>{{item.text}}</td>
+          <td>{{item.commentStatus}}</td>
+          <td>{{item.userName}}</td>
+          <td>{{item.postTitle}}</td>
+          
+          <td colspan="2">
+            <button (click)="approveComment(item.id)">Approve</button>
+            <button (click)="denyComment(item.id)">Deny</button>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>

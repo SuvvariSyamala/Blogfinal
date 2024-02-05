@@ -1,0 +1,29 @@
+<div class="container" style="max-height: 500px;">
+  <h3>My Blogs</h3>
+  <!-- Your existing content -->
+  <div class="form-group">
+    <label for="selectCategory">Select Category:</label>
+    <select [(ngModel)]="categoryId" (change)="getAllPostByCategoryIdUserId()">
+      <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="addPost()">Add Post</button><br><br>
+
+  <div class="row">
+    <div *ngFor="let item of posts" class="mb-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.postTitle }}</h5>
+          <img src="http://localhost:5293/Resources/Images/{{item.image}}" alt="" width="250" height="250">
+          <p class="card-text">{{ item.content }}</p>
+          <p class="text-bold url-handle"><span>URL:</span> <a href="{{ item.urlHandle }}" target="_blank">{{ item.urlHandle }}</a></p>
+          <p class="card-text text-secondary"><strong>AuthorName:</strong> {{ item.authorName }}</p>
+          <p class="card-text text-secondary"><strong>CategoryName:</strong> {{ item.categoryName }}</p>
+          <p class="card-text text-secondary"><strong>PublishedDate:</strong> {{item.publishedDate | date:'dd:MM:yyyy' }}</p>
+          <button class="btn btn-primary" (click)="delete(item.postId)">Delete</button>&nbsp;
+          <button class="btn btn-primary" (click)="edit(item.postId)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

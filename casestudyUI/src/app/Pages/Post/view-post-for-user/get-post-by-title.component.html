@@ -1,0 +1,34 @@
+<div class="container" style="font-family: 'YourSelectedFont', sans-serif;">
+  <div *ngFor="let item of posts" class="post-card">
+    <div class="post-header">
+      <h2>{{ item.postTitle }}</h2>
+    </div>
+
+    <div class="content-box">
+      <p>{{ item.content }}</p>
+      <img src="http://localhost:5293/Resources/Images/{{item.image}}" alt="" width="250" height="250">
+    </div>
+
+    <div class="details">
+      <p class="text-bold url-handle"><span>URL:</span> <a href="{{ item.urlHandle }}" target="_blank">{{ item.urlHandle }}</a></p>
+      <div><strong>Author Name:</strong> {{ item.authorName }}</div>
+      <div><strong>Category Name:</strong> {{ item.categoryName }}</div>
+      <div><strong>Published Date:</strong> {{ item.publishedDate|date:'dd:MM:yyyy' }}</div>
+    </div>
+
+    <div *ngIf="item.canComment=='Allowed'" class="comment-section">
+      <input type="text" [(ngModel)]="comment.text" class="form-control">
+      <button class="btn btn-primary mt-3" (click)="addComment(item.postId)">Add Comment</button>
+
+      <div *ngFor="let com of comments" class="comment-box">
+        <div class="content-box">
+          <p><strong>{{ com.userName }}</strong></p>
+          <p>{{ com.text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add spacing or styling as needed between posts -->
+    <hr class="my-4">
+  </div>
+</div>

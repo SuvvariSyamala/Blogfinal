@@ -1,0 +1,53 @@
+<div class="container">
+    <h3>Add Blog</h3>
+    <table class="table">
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" [(ngModel)]="post.postTitle" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>
+                <textarea [(ngModel)]="post.content" class="form-control" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Url</td>
+            <td>
+                <input type="text" [(ngModel)]="post.urlHandle" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Category Name</td>
+            <td>
+                <select [(ngModel)]="post.categoryId" (change)="getAllCategory($event)" class="form-control">
+                    <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="row" style="margin-bottom:15px;">
+                    <div class="col-md-3">
+                        <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+                        <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="upload" *ngIf="progress > 0">
+                            {{progress}}%
+                        </span>
+                        <span class="upload" *ngIf="message">
+                            {{message}}
+                        </span>
+                        <!-- <div class="col-md-5">
+                            <button (click)="save()">Save</button>
+                        </div> -->
+                    </div>
+                </div>
+                <button class="btn btn-primary" (click)="AddPost()">Add</button>
+            </td>
+        </tr>
+    </table>
+</div>
