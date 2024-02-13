@@ -40,7 +40,7 @@ export class GetuserbyidComponent implements OnInit {
     this.http.get<User>(url,this.httpOptions).subscribe(
       (response) => {
         if (response != null) {
-          this.users = [response]; // Wrap the single user object in an array
+          this.users = [response]; 
           console.log("User", this.users);
         }
       },

@@ -106,12 +106,6 @@ namespace BlogApplicationWebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDenied")
-                        .HasColumnType("bit");
-
                     b.Property<string>("PostTitle")
                         .IsRequired()
                         .HasMaxLength(500)

@@ -22,37 +22,39 @@ httpOptions = {
   }),
 };
 constructor(private http:HttpClient,private router:Router, private ngZone: NgZone)
-{
+{}
+  ngOnInit(): void {
   this.getAllCategory();
   this.userRole = localStorage.getItem('userRole') ?? "Guest";
-}
+  }
+
 getAllCategory(){
   this.http.get<Category[]>('http://localhost:5293/api/Category/GetAllCategories',this.httpOptions).subscribe((response) =>{
     this.categories=response;
     console.log(this.categories);
+    this.router.navigate(['/adminDashboard/getallcategories'], { skipLocationChange: true });
+    this.router.navigate(['/userDashboard/getallcategories'], { skipLocationChange: true });
+
+
   });
 }
 delete(categoryId:any) {
  this.categoryId=categoryId;
   this.http
     .delete('http://localhost:5293/api/Category/DeleteCategory/' + this.categoryId,this.httpOptions)
-    .subscribe((response) => {
-      console.log(response);
-      (err:HttpErrorResponse)=>{
-        console.log(err);
-      }
-      this.router.navigateByUrl('/admin-dashboard/getallcategories');
-    });
- 
+   
+      .subscribe((response) => {
+        console.log(response);
+        this.router.navigate(['/adminDashboard/getallcategories'], { skipLocationChange: true });
+
+      });
 }
 edit(categoryId:any)
 {
   if(this.userRole=="Admin"){
     this.router.navigateByUrl('/admin-dashboard/edit-category/' + categoryId);
   }
-  // else if(userRole == "User"){
-  //   this.router.navigateByUrl('/user-dashboard/edit-category/' + categoryId);
-  // }
+  
   else{
       this.ngZone.run(() => {
         alert('User is not Logged In. Please Login your account.');

@@ -21,9 +21,7 @@ namespace BlogApplicationWebAPI.Entitys
         [StringLength(50)]
         [Column("Status",TypeName ="Varchar")]
         public string ? PostsStatus { get; set; }
-        public bool IsApproved { get; set; } 
-
-        public bool IsDenied { get; set; } 
+        
         [Required]
         public DateTime PublishedDate { get; set; }
 

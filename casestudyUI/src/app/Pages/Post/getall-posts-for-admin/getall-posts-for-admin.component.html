@@ -4,13 +4,11 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="selectCategory">Select Category:</label>
-
         <select [(ngModel)]="categoryId" (change)="getPostByCategoryId()" class="form-control">
-         
           <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
         </select>
         <label for="selectCategory">Select Status:</label>
-        <select [(ngModel)]="postStatus" (change)="getPostByStatus()">
+        <select [(ngModel)]="postStatus" (change)="getPostByStatus()" class="form-control">
           <option *ngFor="let status of postsStatus" [value]="status">{{ status }}</option>
         </select>
       </div>
@@ -35,12 +33,12 @@
         <div class="post-meta">
           <span>Author: {{ item.authorName }}</span>
           <span>Category: {{ item.categoryName }}</span>
-          <button class="btn btn-primary" (click)="approvePost(item.postId)" [disabled]="item.isApproved">
-            {{ item.isApproved ? 'Blog Approved' : 'Approve Blog' }}
+          <button class="btn btn-primary" (click)="approvePost(item.postId)" [disabled]="item.postsStatus === 'Approved'">
+            {{ item.postsStatus === 'Approved' ? 'Approved' : 'Approve Blog' }}
           </button>&nbsp;
           
-          <button class="btn btn-primary" (click)="denyPost(item.postId)" [disabled]="item.isDenied">
-            {{ item.isDenied ? 'Blog Denied' : 'Deny Blog' }}
+          <button class="btn btn-primary" (click)="denyPost(item.postId)" [disabled]="item.postsStatus === 'Denied'">
+            {{ item.postsStatus === 'Denied' ? 'Denied' : 'Deny Blog' }}
           </button>&nbsp;
          
           <button class="btn btn-primary" (click)="view(item.postId)">View</button>
@@ -49,3 +47,5 @@
     </div>
   </div>
 </div>
+
+

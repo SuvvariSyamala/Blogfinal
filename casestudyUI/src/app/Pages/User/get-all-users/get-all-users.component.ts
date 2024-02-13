@@ -6,6 +6,7 @@ import { User } from '../../../Models/user';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { NgZone} from '@angular/core';
+import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 
 @Component({
   selector: 'app-get-all-users',
@@ -82,21 +83,21 @@ export class GetAllUsersComponent implements OnChanges {
   // }
   toggleBlockUser(user: User): void {
     const newStatus = user.userStatus === 'Active' ? 'Blocked' : 'Active';
-
+  
     this.http
-      .post(`http://localhost:5293/api/User/ToggleBlockUser/${user.userId}`, { userStatus: newStatus }, this.httpOptions)
+      .post<any>(`http://localhost:5293/api/User/ToggleBlockUser/${user.userId}`, { userStatus: newStatus }, this.httpOptions)
       .subscribe(
         (response: any) => {
-          user.userStatus = response.UserStatus;
+          // Update the user status immediately upon successful response
+          user.userStatus = newStatus;
+          // Navigate to the desired route
+          this.router.navigate(['adminDashboard/getAllUsers'], { skipLocationChange: true });
         },
         (error) => {
           console.error('Error toggling user block', error);
         }
       );
   }
-}
-
-
-
+}  
 
 

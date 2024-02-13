@@ -1,8 +1,7 @@
-<!-- Add your existing HTML code here -->
 <div class="container">
     <h5>Search User By Name</h5>
-    <input type="text" [(ngModel)]="userName" class="form-control">
-    <button class="btn btn-primary mt-3" (click)="searchUser()">Search</button>
+    <input type="text" [(ngModel)]="userName" class="form-control"> 
+    <button class="btn btn-primary mt-3" (click)="searchUser()">Search</button> <br>
   
     <table class="table table-bordered">
       <thead>
@@ -19,13 +18,11 @@
           <td>{{ user.userName }}</td>
           <td>{{ user.email }}</td>
           <td>
-            <!-- Toggle switch -->
             <div class="toggle-container" (click)="toggleBlockUser(user)">
                 <div class="toggle-slider" [ngClass]="{'toggle-active': user.userStatus === 'Blocked'}">
                     <div class="toggle-circle"></div>
                 </div>
             </div>
-            <!-- Display current status -->
             <span>{{ user.userStatus }}</span>
         </td>
         

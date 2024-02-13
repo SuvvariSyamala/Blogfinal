@@ -21,6 +21,7 @@ import { GetcommentsforadminComponent } from './Pages/Comment/getcommentsforadmi
 import { MyPostsComponentComponent } from './Pages/Post/my-posts-component/my-posts-component.component';
 import { GetuserbyidComponent } from './Pages/User/getuserbyid/getuserbyid.component';
 import { ViewpostComponent } from './Pages/Post/view-post-for-admin/viewpost.component';
+import { HomeComponent } from './Pages/User/home/home.component';
 
 
 export const routes: Routes = [
@@ -63,6 +64,8 @@ export const routes: Routes = [
     ],
   },
   { path: 'login', component: LoginComponent },
-  {path:'',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'',component:HomeComponent},
+
  
 ];

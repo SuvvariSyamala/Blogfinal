@@ -93,7 +93,6 @@ namespace BlogApplicationWebAPI.Services
         {
             var post = Context.Posts.Find(postId) ?? throw new InvalidOperationException($"Post with Id {postId} not found.");
             post.PostsStatus = "Approved";
-            post.IsApproved = true;
             Context.Posts.Update(post);
             Context.SaveChanges();
         }
@@ -102,7 +101,6 @@ namespace BlogApplicationWebAPI.Services
         {
             var post = Context.Posts.Find(postId) ?? throw new InvalidOperationException($"Post with Id {postId} not found.");
             post.PostsStatus = "Denied";
-            post.IsDenied = true;
             Context.Posts.Update(post);
             Context.SaveChanges();
         }
